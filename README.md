@@ -39,7 +39,7 @@ Median wall time in ms over 5 runs:
 | 100 | 7,946 | 8,493 | 8,401 | 8,888 | 8,430 | 8,077 | 8,156 |
 | 400 | 24,156 | 23,763 | 24,212 | 24,039 | 23,956 | 24,143 | 24,172 |
 
-The largest difference between the medians of a reporter and its `onlyFailures` arm is 458 ms, and the sign changes from row to row. In all 12 pairs the min to max ranges of the two arms overlap (`results/summary.md`). Single runs took up to three times the median, so a difference below about 5% would not show in 5 repeats.
+The largest difference between the medians of a reporter and its `onlyFailures` arm is 458 ms, and the sign changes from row to row. In all 12 pairs the min to max ranges of the two arms overlap (`results/summary.md`). The slowest single run took 3.3 times the median, so a difference below about 5% would not show in 5 repeats.
 
 Terminal output in bytes:
 
