@@ -1,0 +1,38 @@
+{
+  "S1Result": [
+    "Playwright has a new only failures option. It can shrink a test report by about ninety five percent.",
+    "But the smaller report says that zero tests passed.",
+    "Two thousand tests. Twenty of them failed. The full report is three megabytes. With only failures, it is one hundred and fifty eight kilobytes.",
+    "Here is what you save, and what you lose."
+  ],
+  "S2Setup": [
+    "The suite has two thousand tests. I made zero, twenty, one hundred, or four hundred of them fail.",
+    "Each run writes a report in one of three formats, with the option off, and with the option on.",
+    "With the two terminal reporters, that is one hundred and sixty runs. I recorded the report size and the run time of every one."
+  ],
+  "S3Size": [
+    "With twenty failed tests, the first format drops from three megabytes to one hundred and fifty eight kilobytes.",
+    "The second drops from two hundred and fifty kilobytes to thirty four.",
+    "The web page report drops the least. From nine hundred and sixty four kilobytes to five hundred and ninety nine. The viewer app is inside the file.",
+    "And the run is not faster. The run time showed no consistent difference."
+  ],
+  "S4Kept": [
+    "What counts as a failure? Tests that fail, tests that time out, and flaky tests that pass on a retry all stay in the report.",
+    "Passed tests and skipped tests are dropped."
+  ],
+  "S5Totals": [
+    "Here is the catch. The totals shrink with the report.",
+    "In the full report, one thousand nine hundred and eighty tests passed. In the smaller report of the same run, zero passed.",
+    "The test count says twenty, not two thousand.",
+    "And a tool that reads test durations from the report got timings for zero tests."
+  ],
+  "S6Fix": [
+    "So use only failures for the report a person opens after a red run.",
+    "Do not point a dashboard or a pass rate check at it.",
+    "If you need both, write blob reports and merge them twice. Once in full, and once with only failures.",
+    "One caveat. The suite uses no browser and no attachments. Measure your own reports before you rely on these numbers."
+  ],
+  "S7EndCard": [
+    "Every run and every number is in the public repo. The links are in the description."
+  ]
+}
