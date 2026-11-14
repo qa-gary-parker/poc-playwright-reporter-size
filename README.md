@@ -15,7 +15,7 @@ Measures what the `onlyFailures` reporter option and the `failures` reporter in 
 ## Method
 
 - `@playwright/test` 1.65.1, Node 24.14.1, macOS. No browser in the tests.
-- `scripts/run-matrix.mjs`: 100 spec files with 20 tests each. Each test has 3 steps. 0, 20, 100 or 400 tests fail on a `toEqual` of two objects. `workers: 4`, `retries: 0`. Arms: `dot`, `failures`, and `json`, `junit` and `html` with and without `onlyFailures` (each beside `dot`). 5 repeats, 160 runs. It records wall time, stdout size and the size of the files each reporter wrote.
+- `scripts/run-matrix.mjs`: 100 spec files with 20 tests each. Each test has 3 steps. `CI=1`. 0, 20, 100 or 400 tests fail on a `toEqual` of two objects. `workers: 4`, `retries: 0`. Arms: `dot`, `failures`, and `json`, `junit` and `html` with and without `onlyFailures` (each beside `dot`). 5 repeats, 160 runs. It records wall time, stdout size and the size of the files each reporter wrote.
 - `scripts/measure-load.mjs`: 10 loads of each report from the last repeat. JSON: read and `JSON.parse`. HTML: Chromium headless, from navigation to the title of the first failed test in the page text.
 - `scripts/run-semantics.mjs`: 8 tests with one outcome each, `retries: 1`, with the option in the config and with the `PLAYWRIGHT_{JSON,JUNIT,HTML}_ONLY_FAILURES` environment variables. It then merges two blob reports with and without the option, and runs `playwright-shard-balancer` 0.1.3 `update` on the JSON reports.
 
@@ -39,7 +39,7 @@ Median wall time in ms over 5 runs:
 | 100 | 7,946 | 8,493 | 8,401 | 8,888 | 8,430 | 8,077 | 8,156 |
 | 400 | 24,156 | 23,763 | 24,212 | 24,039 | 23,956 | 24,143 | 24,172 |
 
-The largest difference between the medians of a reporter and its `onlyFailures` arm is 458 ms, and the sign changes from row to row. In all 12 pairs the min to max ranges of the two arms overlap (`results/summary.md`).
+The largest difference between the medians of a reporter and its `onlyFailures` arm is 458 ms, and the sign changes from row to row. In all 12 pairs the min to max ranges of the two arms overlap (`results/summary.md`). Single runs took up to three times the median, so a difference below about 5% would not show in 5 repeats.
 
 Terminal output in bytes:
 
@@ -65,8 +65,8 @@ Outcomes, 8 tests with `retries: 1` (`results/semantics.json`):
 | passes | listed | dropped |
 | fails | listed | listed |
 | passes on retry | listed | listed |
-| is skipped | listed | dropped |
-| is fixme | listed | dropped |
+| is skipped | listed in JSON and JUnit, counted in HTML | dropped |
+| is fixme | listed in JSON and JUnit, counted in HTML | dropped |
 | fails as expected (`test.fail()`) | listed | dropped |
 | passes but should fail (`test.fail()`) | listed | listed |
 | times out | listed | listed |
@@ -80,8 +80,8 @@ Totals in the same reports:
 | HTML counters | All 6, Passed 2, Failed 3, Flaky 1, Skipped 2 | All 4, Passed 0, Failed 3, Flaky 1, Skipped 0 |
 
 - The environment variables gave the same reports as the config option.
-- Blob reports: two shard blobs merged to 8 tests with `--reporter json` and to 4 tests with `onlyFailures: true` in the merge config.
-- `playwright-shard-balancer update`: 3 tests with timings from the full 8-test JSON report, 1 from the `onlyFailures` report. On the 2,000-test reports with 20 failed tests: 1,980 and 0.
+- Blob reports (JSON reporter only): two shard blobs merged to 8 tests with `--reporter json` and to 4 tests with `onlyFailures: true` in the merge config.
+- `playwright-shard-balancer update`: 3 tests with timings from the full 8-test JSON report, 1 from the `onlyFailures` report. On the 2,000-test reports with 20 failed tests: 1,980 and 0. Exit code 0 both times, with `0 samples from 1 input(s)` and no warning for the `onlyFailures` report.
 
 Not tested: interrupted tests (the source also counts them as failures), browser tests, traces, screenshots and other attachments.
 
