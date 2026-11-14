@@ -1,0 +1,10 @@
+{
+  "name": "poc-playwright-reporter-size",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "matrix": "node scripts/run-matrix.mjs",
+    "load": "node scripts/measure-load.mjs",
+    "semantics": "node scripts/run-semantics.mjs"
+  }
+}

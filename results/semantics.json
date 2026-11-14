@@ -1,0 +1,226 @@
+{
+ "outcomes": [
+  "passes",
+  "fails",
+  "passes on retry",
+  "is skipped",
+  "is fixme",
+  "fails as expected",
+  "passes but should fail",
+  "times out"
+ ],
+ "modes": {
+  "full": {
+   "exit": 1,
+   "json": {
+    "titles": [
+     "passes",
+     "fails",
+     "passes on retry",
+     "is skipped",
+     "is fixme",
+     "fails as expected",
+     "passes but should fail",
+     "times out"
+    ],
+    "stats": {
+     "expected": 2,
+     "skipped": 2,
+     "unexpected": 3,
+     "flaky": 1
+    }
+   },
+   "junit": {
+    "titles": [
+     "passes",
+     "fails",
+     "passes on retry",
+     "is skipped",
+     "is fixme",
+     "fails as expected",
+     "passes but should fail",
+     "times out"
+    ],
+    "totals": {
+     "tests": 8,
+     "failures": 2,
+     "skipped": 2,
+     "errors": 1
+    }
+   },
+   "html": {
+    "titles": [
+     "passes",
+     "fails",
+     "passes on retry",
+     "fails as expected",
+     "passes but should fail",
+     "times out"
+    ],
+    "counters": [
+     "All6",
+     "Passed2",
+     "Failed3",
+     "Flaky1",
+     "Skipped2",
+     "",
+     ""
+    ]
+   }
+  },
+  "onlyFailures": {
+   "exit": 1,
+   "json": {
+    "titles": [
+     "fails",
+     "passes on retry",
+     "passes but should fail",
+     "times out"
+    ],
+    "stats": {
+     "expected": 0,
+     "skipped": 0,
+     "unexpected": 3,
+     "flaky": 1
+    }
+   },
+   "junit": {
+    "titles": [
+     "fails",
+     "passes on retry",
+     "passes but should fail",
+     "times out"
+    ],
+    "totals": {
+     "tests": 4,
+     "failures": 2,
+     "skipped": 0,
+     "errors": 1
+    }
+   },
+   "html": {
+    "titles": [
+     "fails",
+     "passes on retry",
+     "passes but should fail",
+     "times out"
+    ],
+    "counters": [
+     "All4",
+     "Passed0",
+     "Failed3",
+     "Flaky1",
+     "Skipped0",
+     "",
+     ""
+    ]
+   }
+  },
+  "envVar": {
+   "exit": 1,
+   "json": {
+    "titles": [
+     "fails",
+     "passes on retry",
+     "passes but should fail",
+     "times out"
+    ],
+    "stats": {
+     "expected": 0,
+     "skipped": 0,
+     "unexpected": 3,
+     "flaky": 1
+    }
+   },
+   "junit": {
+    "titles": [
+     "fails",
+     "passes on retry",
+     "passes but should fail",
+     "times out"
+    ],
+    "totals": {
+     "tests": 4,
+     "failures": 2,
+     "skipped": 0,
+     "errors": 1
+    }
+   },
+   "html": {
+    "titles": [
+     "fails",
+     "passes on retry",
+     "passes but should fail",
+     "times out"
+    ],
+    "counters": [
+     "All4",
+     "Passed0",
+     "Failed3",
+     "Flaky1",
+     "Skipped0",
+     "",
+     ""
+    ]
+   }
+  }
+ },
+ "merge": {
+  "blobFiles": 2,
+  "onlyFailures": {
+   "exit": 0,
+   "titles": [
+    "fails",
+    "passes on retry",
+    "passes but should fail",
+    "times out"
+   ],
+   "stats": {
+    "expected": 0,
+    "skipped": 0,
+    "unexpected": 3,
+    "flaky": 1
+   }
+  },
+  "full": {
+   "exit": 0,
+   "titles": [
+    "passes",
+    "fails",
+    "passes on retry",
+    "is skipped",
+    "is fixme",
+    "fails as expected",
+    "passes but should fail",
+    "times out"
+   ],
+   "stats": {
+    "expected": 2,
+    "skipped": 2,
+    "unexpected": 3,
+    "flaky": 1
+   }
+  }
+ },
+ "balancer": {
+  "full": {
+   "exit": 0,
+   "testsWithTimings": 3
+  },
+  "onlyFailures": {
+   "exit": 0,
+   "testsWithTimings": 1
+  }
+ },
+ "balancer2000": {
+  "failed": 20,
+  "full": {
+   "exit": 0,
+   "testsWithTimings": 1980
+  },
+  "onlyFailures": {
+   "exit": 0,
+   "testsWithTimings": 0
+  }
+ }
+}

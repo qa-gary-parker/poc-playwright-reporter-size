@@ -1,0 +1,144 @@
+[
+ {
+  "failPct": 0,
+  "arm": "json",
+  "metric": "read + JSON.parse",
+  "loads": 10,
+  "medianMs": 4.6,
+  "minMs": 4.3,
+  "maxMs": 7.3
+ },
+ {
+  "failPct": 0,
+  "arm": "json-only",
+  "metric": "read + JSON.parse",
+  "loads": 10,
+  "medianMs": 0.1,
+  "minMs": 0.1,
+  "maxMs": 0.5
+ },
+ {
+  "failPct": 1,
+  "arm": "json",
+  "metric": "read + JSON.parse",
+  "loads": 10,
+  "medianMs": 4.5,
+  "minMs": 4.4,
+  "maxMs": 7.3
+ },
+ {
+  "failPct": 1,
+  "arm": "json-only",
+  "metric": "read + JSON.parse",
+  "loads": 10,
+  "medianMs": 0.3,
+  "minMs": 0.2,
+  "maxMs": 1.1
+ },
+ {
+  "failPct": 5,
+  "arm": "json",
+  "metric": "read + JSON.parse",
+  "loads": 10,
+  "medianMs": 5.4,
+  "minMs": 5,
+  "maxMs": 6.8
+ },
+ {
+  "failPct": 5,
+  "arm": "json-only",
+  "metric": "read + JSON.parse",
+  "loads": 10,
+  "medianMs": 1.1,
+  "minMs": 1,
+  "maxMs": 2.4
+ },
+ {
+  "failPct": 20,
+  "arm": "json",
+  "metric": "read + JSON.parse",
+  "loads": 10,
+  "medianMs": 7.3,
+  "minMs": 7,
+  "maxMs": 8.3
+ },
+ {
+  "failPct": 20,
+  "arm": "json-only",
+  "metric": "read + JSON.parse",
+  "loads": 10,
+  "medianMs": 4,
+  "minMs": 3.8,
+  "maxMs": 4.2
+ },
+ {
+  "failPct": 0,
+  "arm": "html",
+  "metric": "navigation to first test title visible in text",
+  "loads": 10,
+  "medianMs": 63.2,
+  "minMs": 62.2,
+  "maxMs": 112.1,
+  "domNodes": 3093
+ },
+ {
+  "failPct": 1,
+  "arm": "html",
+  "metric": "navigation to first test title visible in text",
+  "loads": 10,
+  "medianMs": 62.8,
+  "minMs": 61.8,
+  "maxMs": 64.8,
+  "domNodes": 3095
+ },
+ {
+  "failPct": 1,
+  "arm": "html-only",
+  "metric": "navigation to first test title visible in text",
+  "loads": 10,
+  "medianMs": 48,
+  "minMs": 47.1,
+  "maxMs": 50.7,
+  "domNodes": 475
+ },
+ {
+  "failPct": 5,
+  "arm": "html",
+  "metric": "navigation to first test title visible in text",
+  "loads": 10,
+  "medianMs": 63.1,
+  "minMs": 61.4,
+  "maxMs": 64.7,
+  "domNodes": 3095
+ },
+ {
+  "failPct": 5,
+  "arm": "html-only",
+  "metric": "navigation to first test title visible in text",
+  "loads": 10,
+  "medianMs": 53.6,
+  "minMs": 52.6,
+  "maxMs": 55.8,
+  "domNodes": 1595
+ },
+ {
+  "failPct": 20,
+  "arm": "html",
+  "metric": "navigation to first test title visible in text",
+  "loads": 10,
+  "medianMs": 63,
+  "minMs": 61.4,
+  "maxMs": 67.9,
+  "domNodes": 3095
+ },
+ {
+  "failPct": 20,
+  "arm": "html-only",
+  "metric": "navigation to first test title visible in text",
+  "loads": 10,
+  "medianMs": 57.2,
+  "minMs": 55.8,
+  "maxMs": 58.4,
+  "domNodes": 2693
+ }
+]
